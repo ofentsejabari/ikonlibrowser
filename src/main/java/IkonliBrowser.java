@@ -15,50 +15,26 @@ public class IkonliBrowser extends Application {
 
         JFXTabPane tabPane = new JFXTabPane();
 
-        Tab materialDesign = new Tab("Material Design",
-                new Label("("+org.kordamp.ikonli.materialdesign.MaterialDesign.values().length+")"));
+        Tab materialDesign = new Tab("Material Design");
         materialDesign.setContent(new MaterialDesign());
 
-        Tab dashicons = new Tab("Dashicons");
+        Tab material = new Tab("Material icons");
+        material.setContent(new Material());
+
+        Tab dashicons = new Tab("OctIcons");
         dashicons.setContent(new Dashicons());
+
+        Tab weather = new Tab("Weather Icons");
+        weather.setContent(new Dashicons());
 
         Tab fontAwesome = new Tab("FontAwesome");
         fontAwesome.setContent(new FontAwesome());
 
-        Tab hawconsFilled = new Tab("HawconsFilled");
-        hawconsFilled.setContent(new HawconsFilled());
 
-        Tab hawconsStroke  = new Tab("HawconsStroke");
-        hawconsStroke.setContent(new HawconStroke());
-
-        Tab Ionicons4IOS  = new Tab("HawconsStroke");
-        Ionicons4IOS.setContent(new Ionicons4IOS());
-
-        Tab Ionicons4Logo  = new Tab("Ionicons4Logo");
-        Ionicons4Logo.setContent(new Ionicons4Logo());
-
-        Tab Ionicons4Material  = new Tab("Ionicons4Material");
-        Ionicons4Material.setContent(new Ionicons4Material());
-
-        Tab Material  = new Tab("Material");
-        Material.setContent(new Material());
-
-        Tab MetrizeIcons  = new Tab("MetrizeIcons");
-        MetrizeIcons.setContent(new MetrizeIcons());
-
-        Tab Octicons  = new Tab("Octicons");
-        Octicons.setContent(new Octicons());
-
-        Tab Themify  = new Tab("Themify");
-        Themify.setContent(new Themify());
-
-        Tab Websymbols  = new Tab("Websymbols");
-        Websymbols.setContent(new Websymbols());
-
-        tabPane.getTabs().addAll(materialDesign, dashicons, fontAwesome,
-                hawconsFilled, hawconsStroke, Ionicons4IOS,
+        tabPane.getTabs().addAll(materialDesign, material, weather, dashicons, fontAwesome);//,
+                /*hawconsFilled, hawconsStroke, Ionicons4IOS,
                 Ionicons4Logo,Ionicons4Material, Material, MetrizeIcons, Octicons,
-                Themify, Websymbols );
+                Themify, Websymbols );*/
 
 
         container.setCenter(tabPane);

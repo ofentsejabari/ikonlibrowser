@@ -2,6 +2,7 @@ import com.jfoenix.controls.JFXButton;
 import de.jensd.fx.glyphs.GlyphIcons;
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
+import de.jensd.fx.glyphs.weathericons.WeatherIcon;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
@@ -14,15 +15,15 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 
-public class MaterialDesign extends BorderPane {
+public class Weather extends BorderPane {
 
-    public MaterialDesign() {
+    public Weather() {
 
         FlowPane flowPane = new FlowPane(Orientation.HORIZONTAL);
         flowPane.setHgap(5);
         flowPane.setVgap(5);
 
-        for(GlyphIcons icon: MaterialDesignIcon.values()) {
+        for(GlyphIcons icon: WeatherIcon.values()) {
             JFXButton btn = new JFXButton("", GlyphsDude.createIcon(icon, "32"));
             btn.setTooltip(new Tooltip(icon.toString()));
             btn.setContentDisplay(ContentDisplay.TOP);
@@ -39,7 +40,7 @@ public class MaterialDesign extends BorderPane {
                 if(!newValue.isEmpty()) {
                     flowPane.getChildren().clear();
 
-                    for (GlyphIcons icon: MaterialDesignIcon.values()) {
+                    for (GlyphIcons icon: WeatherIcon.values()) {
 
                         if (icon.toString().toLowerCase().contains(newValue.toLowerCase())) {
 
@@ -51,7 +52,7 @@ public class MaterialDesign extends BorderPane {
                         }
                     }
                 }else{
-                    for(GlyphIcons icon: MaterialDesignIcon.values()) {
+                    for(GlyphIcons icon: WeatherIcon.values()) {
                         JFXButton btn = new JFXButton("", GlyphsDude.createIcon(icon, "32"));
                         btn.setTooltip(new Tooltip(icon.toString()));
                         btn.setContentDisplay(ContentDisplay.TOP);
